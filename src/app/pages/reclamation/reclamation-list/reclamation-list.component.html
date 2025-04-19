@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <!-- Barre de recherche -->
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Rechercher..."
+        
+        (input)="filterList()"
+      />
+    </div>
+  
+    <!-- Tableau -->
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredList">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>
+            <!-- Bouton Éditer -->
+            <button
+              class="btn btn-primary me-2"
+              routerLink="/reclamation/edit-reclamation"
+              (click)="editItem(item.id)"
+            >
+              Éditer
+            </button>
+            <!-- Bouton Supprimer -->
+            <button
+              class="btn btn-danger"
+              (click)="deleteItem(item.id)"
+            >
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
