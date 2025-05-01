@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { ReclamationStatsComponent } from './pages/reclamation/reclamation-stats/reclamation-stats.component';
+
 
 const routes: Routes = [
   {
@@ -11,6 +13,7 @@ const routes: Routes = [
   {path: 'auth', loadChildren: () => import('./pages/authentication/authentication.module').then(m => m.AuthenticationModule)},
   {path: 'extra', loadChildren: () => import('./pages/extra/extra.module').then(m => m.ExtraModule)},
   {path: 'reclamation', loadChildren: () => import('./pages/reclamation/reclamation.module').then(m => m.ReclamationModule)},
+
 
   // {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
