@@ -1,17 +1,41 @@
 <div class="container-fluid">
-<form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Sujet</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">    
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title fw-semibold mb-4">Add Reclamation</h5>
+
+      <form (ngSubmit)="onSubmit()" #reclamationForm="ngForm">
+        <!-- Champ Sujet -->
+        <div class="mb-3">
+          <label for="sujet" class="form-label">Sujet</label>
+          <input type="text" class="form-control" id="sujet"
+                 [(ngModel)]="reclamation.sujet" name="sujet" required>
+        </div>
+
+        <!-- Champ Description -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" id="description" rows="5"
+                    [(ngModel)]="reclamation.description" name="description" required></textarea>
+        </div>
+
+        <!-- Champ Fichier -->
+        <div class="mb-3">
+          <label for="file" class="form-label">Attach a File</label>
+          <input type="file" class="form-control" id="file"
+                 (change)="onFileSelected($event)" accept=".pdf,.doc,.docx,.jpg,.png" required>
+        </div>
+
+        <!-- Boutons Actions -->
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-secondary" routerLink="/reclamation">
+            <i class="ti ti-arrow-left me-2"></i>Back to List
+          </button>
+
+          <button type="submit" class="btn btn-primary" [disabled]="!reclamationForm.form.valid">
+            <i class="ti ti-check me-2"></i>Add Reclamation
+          </button>
+        </div>
+      </form>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Description</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary" routerLink="/reclamation/reclamation-list">Submit</button>
-  </form>
+  </div>
 </div>

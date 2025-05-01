@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-angular18-project": {
+    "selfundr_template": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-angular18-project",
+            "outputPath": "dist/selfundr_template",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-angular18-project:build:production"
+              "buildTarget": "selfundr_template:build:production"
             },
             "development": {
-              "buildTarget": "my-angular18-project:build:development"
+              "buildTarget": "selfundr_template:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,6 +109,7 @@
     }
   },
   "cli": {
-    "analytics": "e54bd567-eaa0-4002-b586-386440375e9d"
+    "analytics": "0686653b-fd1a-43c4-ae12-6466a96c92fe"
   }
+
 }
